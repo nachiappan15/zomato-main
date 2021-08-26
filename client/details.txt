@@ -1,0 +1,9 @@
+PACKAGES:
+
+react  -> {useState, useEffect}
+Tailwind
+react-router-dom   -> {BrowserRouter} {Route} {Use params} {Link}
+react-icons
+react-slick
+slick-carousel
+

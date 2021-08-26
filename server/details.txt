@@ -1,0 +1,178 @@
+// babel impoeted
+
+// using express and port is 4000 for now
+
+// using cors , helmet 
+
+// using nodemon foe dev purpose
+
+// imported mongoose
+// mongo Db for database
+// database folder created and folder created for each colection for their schema specification.
+
+----schema specification ------
+
+create schema -->  create model --> export model (for each collection seperately)  
+
+
+
+
+
+
+
+
+-Auth ✅
+-Users✅
+-Images ⭕
+-Foods ✅
+-Restaurant ✅
+-Menu✅
+-Order✅
+-Payment  -> Razorpay⭕
+-Reviews✅
+
+
+all database models in  -> allmodels.js
+static and methods of mongoose is used for clean code.
+
+**********env**********  -> dotenv
+MONGO_URL
+
+
+
+
+***Auth***    /auth
+POST-- sign up using credentials ✅
+POST-- sign in using credentials ✅
+POST-- Google authentication ✅
+
+Check user data
+Password is hashed    -> for hashing "bcryptjs" is used.
+
+
+
+
+
+***Restaurant***       "/restaurant"                 -> (error) status 500      -> :: if (restaurant not found) - status 404 : else return restaurant
+
+GET-- get restaurant details using city  ✅              -> using url query {city}   :RestaurantModel    -> find all restaurant -   "/"
+GET-- get individual restaurant based on id ✅           -> uisng params{_id }       :RestaurantModel    -> find one restaurant          "/:_id"
+GET-- get restaurant details based on search string ✅   ->using body {searchString} :RestaurantModel    -> find using regex      = $ regex is used in mongoose operations options " i"     "/search"
+
+
+
+
+
+***Food***    "/food"     -> (error) status 500     -> :: if (food not found) - status 404 : else return food
+
+GET-- get all foods based on restaurant ID  ✅          -> using params{_id}    :FoodModel (restaurant id merged in food model)     -> find all   "/r/:_id"
+GET-- get all foods based on category    ✅         -> using params{category} :FoodModel                                          -> find all   "/r/:category"
+
+
+
+
+
+
+***Menu***    "/menu"     -> (error) status 500          -> :: if (menu not found) - status 404 : else return menu
+
+
+GET-- get all menu list based on id  ✅          -> using params{_id}    :MenuModel findOne      "/list/:_id"
+GET-- get all menu images based on id ✅         -> usingparams{_id}     :ImageModel             "/image/_id"
+
+
+
+
+
+***image*** "/image"         -> (error) status 500
+
+
+
+
+Usage of aws S3 bucket
+
+--  (POST)   upload images to s3 bucket and save file links to mongoDB .
+
+
+
+
+
+
+***order*** "/order"                -> (error) status 500          -> :: if (user not found) - status 404 : else return order based on user _id
+
+GET-- get orders based on id✅                ->using params{user:  _id}      :OrderModel find     "/:_id"
+POST-- add a new order to a user id✅         ->using params{user:  _id} :OrderModel findOneAndUpdate         body {orderData}      "/new/:_id"
+
+
+
+
+
+***reviews*** "/review"             -> (error) status 500          -> :: if (user not found) - status 404 : else return  review
+
+POST-- add a new review/rating ✅             ->body{review Object}        "/new"
+DELETE-- delete a review   ✅             "/delete"
+
+
+
+
+
+***users*** "/user"                    -> (error) status 500          -> :: if (user not found) - status 404 : else return user
+
+GET-- get user details based on id ✅     -> using params{_id}          "/:_id"
+PUT--update user details based on _id ✅  -> using params{_id}            "/update/:_id"        
+
+
+
+**********VALIDATIONS**********
+
+:: validation is for the data to be passed in APIs  {req.body & req.params}
+
+
+LIBRARY  ->  package JOI
+
+
+    -Auth ✅
+        signup✅
+        signin✅
+
+    -Users✅
+        /       ✅
+        /update/:id✅
+
+
+
+    -Images ⭕
+
+    -Foods ✅
+        /r/:_id✅
+        /r/:category✅
+
+
+    -Restaurant ✅
+        / ✅
+        /:_id ✅
+        /search ✅
+
+
+    -Menu✅
+        /list/:_id✅
+        /image/_id✅
+
+    -Order  ✅
+        /   ✅
+        /new    ✅
+
+    -Payment  -> Razorpay
+
+
+    -Reviews✅
+        /new✅
+        /delete/:_id✅
+
+
+
+
+PRIVATE APIs  {route.config.js} , passport-jwt
+
+
+Order ::: 
+    /:_id

@@ -1,0 +1,30 @@
+DATABASE :-:
+    FoodModel
+    ImageModel
+    MenuModel
+    OrderModel
+    RestaurantModel
+    ReviewModel
+    UserModel
+
+    AllModels
+
+
+
+API :-:
+    Auth
+    Food
+    Menu
+    Image
+    orders
+    Restaurant
+
+
+
+VALIDATIONS :-:
+    Auth
+    Food
+    Menu
+    Image
+    orders
+    Restaurant
