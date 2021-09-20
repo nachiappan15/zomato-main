@@ -6,7 +6,7 @@ import React from 'react'
 // Navbar
 import Navbar from '../components/Navbar'
 // FoodTab
-import FoodTab from '../components/FoodTab'
+import FoodTab from '../components/Home Components/FoodTab'
 
 
 
