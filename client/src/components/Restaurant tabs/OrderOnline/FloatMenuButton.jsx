@@ -10,7 +10,7 @@ const FloatMenuButton = () => {
     )
     return (
         <>
-        <div className="w-6/12 Z-10 fixed bottom-2 right-2 md:hidden flex flex-col gap-2 items-end">
+        <div className="w-6/12 Z-10 fixed bottom-2 right-2 md:hidden flex flex-col gap-2 items-end  z-30">
             {isClicked && <div className="w-full p-3 overflow-scroll h-48 bg-white">
                 <MenuListContainer/>
             </div>}

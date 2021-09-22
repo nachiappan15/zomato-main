@@ -2,14 +2,14 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { FcGoogle } from "react-icons/fc"
 
-export default function SignIn({ isOpen, setIsOpen, ...props }) {
+export default function SignUp({ isOpen, setIsOpen, ...props }) {
 
 
     function closeModal() {
         setIsOpen(false)
     }
 
-   
+
 
     return (
         <>
@@ -55,17 +55,21 @@ export default function SignIn({ isOpen, setIsOpen, ...props }) {
                                     as="h3"
                                     className="text-lg font-medium leading-6 text-gray-900"
                                 >
-                                    LOG IN
+                                    SIGN UP
                                 </Dialog.Title>
                                 <div className="mt-2">
                                     <button className="py-2 px-2 flex items-center justify-center    rounded-lg text-center gap-2 w-full border  bg-white text-gray-700 hover:bg-gray-100">
-                                        Sign In with google <FcGoogle />
+                                        Sign Up with google <FcGoogle />
                                     </button>
 
                                     <form className="mt-1 flex flex-col gap-3">
                                         <div className="flex flex-col gap-1">
+                                            <label htmlFor="username" className="text-lg font-medium">UserName</label>
+                                            <input type="text" id="username" className="border-2 outline-none px-2 py-1 w-full rounded-lg " />
+                                        </div>
+                                        <div className="flex flex-col gap-1">
                                             <label htmlFor="email" className="text-lg font-medium">Email</label>
-                                            <input type="text" id="email"  className="border-2 outline-none px-2 py-1 w-full rounded-lg " />
+                                            <input type="email" id="email" className="border-2 outline-none px-2 py-1 w-full rounded-lg " />
                                         </div>
                                         <div className="flex flex-col gap-1">
                                             <label htmlFor="password" className="text-lg font-medium">Password</label>
@@ -75,11 +79,11 @@ export default function SignIn({ isOpen, setIsOpen, ...props }) {
                                             Sign In
                                         </div>
 
-                                        
+
                                     </form>
                                 </div>
 
-                                
+
                             </div>
                         </Transition.Child>
                     </div>

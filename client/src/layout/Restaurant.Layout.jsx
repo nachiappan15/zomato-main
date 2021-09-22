@@ -6,6 +6,7 @@ import ImageGrid from '../components/Restaurant Components/ImageGrid'
 import RestaurantInfo from '../components/Restaurant Components/RestaurantInfo'
 import ResInfoButtons from '../components/Restaurant Components/ResInfoButtons'
 import ResTabContainer from '../components/Restaurant Components/ResTabContainer'
+import CartContainer from '../components/Cart/CartContainer'
 
 
 
@@ -39,8 +40,9 @@ const RestaurantLayout = (props) => {
                <ResInfoButtons/>
                <ResTabContainer/>
                {props.children}
+               
             </div>
-
+            <CartContainer/>
         </>
     )
 }

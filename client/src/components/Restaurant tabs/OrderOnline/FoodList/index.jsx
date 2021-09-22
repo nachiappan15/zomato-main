@@ -6,7 +6,7 @@ const FoodList = (props) => {
     return (
         <>
         <div className="mb-3 w-full h-screen overflow-y-scroll overflow-x-visible">
-                        <h2 className="text-2xl font-semibold sticky top-0 bg-white px-2 z-10   py-3 w-full">{props.title}</h2>
+                        <h2 className="text-2xl font-semibold sticky top-0 bg-white px-2  z-10  py-3 w-full">{props.title}</h2>
                         <div className="flex flex-col gap-2">
                         {props.items.map(item=>{
                             return<>
