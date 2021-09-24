@@ -2,14 +2,18 @@
 import {Route , Redirect} from "react-router-dom"
 import test from "./components/testing/test";
 
+
 // HOC
 import HomeLayoutHOC from "./HOC/Home.HOC";
 import RestaurantHoc from "./HOC/Restaurant.Hoc";
+import CkeckOutHOC from "./HOC/CkeckOut.HOC";
 
 
 // Master
 import Home from "./Pages/Home";
 import Restaurant from "./Pages/Restaurant";
+import CheckOut from "./Pages/CheckOut";
+
 
 function App() {
   return (
@@ -23,6 +27,7 @@ function App() {
      
      <HomeLayoutHOC path="/:type" exact component={Home}/>
      <RestaurantHoc path="/restaurant/:id/:tab"  component={Restaurant}/>
+     <CkeckOutHOC path="/checkout/orders"  exact component={CheckOut}/>
      </div>
   );
 }
