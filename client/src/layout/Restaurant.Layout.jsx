@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useDispatch} from 'react'
+import { useParams } from 'react-router-dom'
 import RestaurantNavbar from '../components/Navbar/Restaurant.Navbar'
 
 
@@ -8,11 +9,20 @@ import ResInfoButtons from '../components/Restaurant Components/ResInfoButtons'
 import ResTabContainer from '../components/Restaurant Components/ResTabContainer'
 import CartContainer from '../components/Cart/CartContainer'
 
+// REDUX
+import {getSpecificRestaurant} from "../Redux/Reducer/restaurant/restaurant.action"
+
 
 
 
 
 const RestaurantLayout = (props) => {
+
+    const {id}= useParams();
+
+    
+
+
     const nav_images = [
         "https://b.zmtcdn.com/data/pictures/chains/0/67170/8b468c8bce485d9e0ec13c75d97ab0b0_featured_v2.jpg",
         "https://b.zmtcdn.com/data/pictures/chains/0/67170/096d3be915fc540d58b8cf8d3a6874d4.jpg",

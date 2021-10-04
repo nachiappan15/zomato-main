@@ -1,10 +1,12 @@
 import React from 'react'
 import { AiFillStar } from "react-icons/ai"
+import { Link } from 'react-router-dom';
 
 const RestaurantCard = (props) => {
     return (
         <>
-            <div className="bg-white w-full  rounded-2xl overflow-hidden cursor-pointer mt-3 lg:mt-1 p-2 border-2 border-white hover:border-2 hover:border-gray-200 hover:shadow-md">
+        <Link to ={`/restaurant/${props.id}/overView`} >
+        <div className="bg-white w-full  rounded-2xl overflow-hidden cursor-pointer mt-3 lg:mt-1 p-2 border-2 border-white hover:border-2 hover:border-gray-200 hover:shadow-md">
                 <div className="w-full h-60 relative overflow-hidden">
 
                     {props.isOff && <span className="absolute bottom-3 left-0 bg-blue-600 text-white text-sm px-1 font-medium" >
@@ -43,6 +45,8 @@ const RestaurantCard = (props) => {
 
 
             </div>
+        </Link>
+            
         </>
     )
 }

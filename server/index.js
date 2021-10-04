@@ -20,6 +20,7 @@ import Food from "./API/Food"
 import Menu from "./API/Menu"
 import Order from "./API/Order"
 import Review from "./API/Review"
+import Image  from "./API/Image"
 
 //database connection
 
@@ -50,6 +51,7 @@ zomato.use("/food",Food);
 zomato.use("/menu",Menu);
 zomato.use("/order",Order);
 zomato.use("/review",Review);
+zomato.use("/image",Image);
 
 
 

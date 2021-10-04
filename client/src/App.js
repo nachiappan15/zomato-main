@@ -13,6 +13,7 @@ import CkeckOutHOC from "./HOC/CkeckOut.HOC";
 import Home from "./Pages/Home";
 import Restaurant from "./Pages/Restaurant";
 import CheckOut from "./Pages/CheckOut";
+import RedirectRestaurant from "./Pages/Redirect"
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       </Route>
      
      <HomeLayoutHOC path="/:type" exact component={Home}/>
-     <RestaurantHoc path="/restaurant/:id/:tab"  component={Restaurant}/>
+     <RestaurantHoc path="/restaurant/:id/:tab"  component={RedirectRestaurant}/>
      <CkeckOutHOC path="/checkout/orders"  exact component={CheckOut}/>
      </div>
   );
